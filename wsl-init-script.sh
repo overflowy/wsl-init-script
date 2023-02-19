@@ -97,7 +97,6 @@ end
 
 set -g fish_greeting
 set -gx EDITOR micro
-set -U FZF_LEGACY_KEYBINDINGS 0
 set PATH $PATH /home/deneb/.local/bin
 
 function fzf-help
