@@ -114,7 +114,7 @@ function fzf-help
 end
 
 function cheat
-    curl cheat.sh/$argv
+    curl cheat.sh/\$argv
 end
 EOF
 
