@@ -157,6 +157,8 @@ install_asdf_plugins() {
 }
 
 setup_gesttings() {
+    print "Setting up gsettings..."
+    sudo systemd-machine-id-setup
     gsettings set org.gnome.desktop.interface color-scheme prefer-dark
     gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 }
