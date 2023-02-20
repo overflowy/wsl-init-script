@@ -155,6 +155,11 @@ install_asdf_plugins() {
     done
 }
 
+setup_gesttings() {
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    gsettings set org.gnome.desktop.interface icon-theme "Papirus"
+}
+
 setup_wsl() {
     print "Setting up WSL..."
     sudo rm -f /etc/wsl.conf
@@ -191,10 +196,6 @@ fix_annoyalances() {
 
     # Zoxide
     echo "zoxide init fish | source" >>$HOME/.config/fish/config.fish
-
-    # Dark theme and Papirus
-    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-    gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 }
 
 main() {
@@ -205,6 +206,7 @@ main() {
     sudo apt update
     install_asdf
     install_asdf_plugins
+    setup_gesttings
     setup_wsl
     fix_annoyalances
     print "Done! 🙌"
