@@ -24,6 +24,10 @@ PACKAGES=(
     ranger
     ripgrep
     zoxide
+    apt-rollback
+    nautilus
+    tilix
+    papirus-icon-theme
 )
 
 FISHER_PLUGINS=(
@@ -187,6 +191,10 @@ fix_annoyalances() {
 
     # Zoxide
     echo "zoxide init fish | source" >>$HOME/.config/fish/config.fish
+
+    # Dark theme and Papirus
+    gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+    gsettings set org.gnome.desktop.interface icon-theme "Papirus"
 }
 
 main() {
