@@ -116,6 +116,13 @@ end
 function cheat
     curl cheat.sh/\$argv
 end
+
+function wincopy
+    set -l winuser '$HOSTNAME'
+    set -l destination_path /mnt/c/Users/{\$winuser}/Desktop/
+    mkdir -p \$destination_path
+    cp -r \$argv \$destination_path
+end
 EOF
 
     # Fisher plugin manager
