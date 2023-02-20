@@ -39,6 +39,7 @@ PIPX_PACKAGES=(
     poetry
     black
     ruff
+    pre-commit
 )
 
 ASDF_PLUGINS=(
