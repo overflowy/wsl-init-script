@@ -163,6 +163,15 @@ install_asdf_plugins() {
     done
 }
 
+install_binaries_hosted_on_gh() {
+    print "Installing binaries hosted on GitHub..."
+    mkdir -p $HOME/.local/bin
+
+    # Tokei
+    wget -qO tokei.tar.gz https://github.com/XAMPPRocky/tokei/releases/latest/download/tokei-x86_64-unknown-linux-gnu.tar.gz
+    tar -xzf tokei.tar.gz -C $HOME/.local/bin
+    rm tokei.tar.gz
+
 setup_gesttings() {
     print "Setting up gsettings..."
     sudo systemd-machine-id-setup
@@ -216,6 +225,7 @@ main() {
     sudo apt update
     install_asdf
     install_asdf_plugins
+    install_binaries_hosted_on_gh
     setup_gesttings
     setup_wsl
     fix_annoyalances
