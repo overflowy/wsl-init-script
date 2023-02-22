@@ -163,8 +163,8 @@ install_asdf_plugins() {
     done
 }
 
-install_binaries_hosted_on_gh() {
-    print "Installing binaries hosted on GitHub..."
+install_binaries_from_gh() {
+    print "Installing binaries from GitHub..."
     mkdir -p $HOME/.local/bin
 
     # Tokei
@@ -225,7 +225,7 @@ main() {
     sudo apt update
     install_asdf
     install_asdf_plugins
-    install_binaries_hosted_on_gh
+    install_binaries_from_gh
     setup_gesttings
     setup_wsl
     fix_annoyalances
