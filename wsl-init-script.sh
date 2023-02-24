@@ -172,6 +172,13 @@ install_binaries_from_gh() {
     tar -xzf tokei.tar.gz -C $HOME/.local/bin
     rm tokei.tar.gz
 
+    # Task
+    wget -qO task.tar.gz https://github.com/go-task/task/releases/download/v3.21.0/task_linux_amd64.tar.gz
+    tar -xzf task.tar.gz
+    mv task $HOME/.local/bin
+    cp completion/fish/task.fish $HOME/.config/fish/completions
+    rm -rf task.tar.gz  LICENSE README.md completion
+
 setup_gesttings() {
     print "Setting up gsettings..."
     sudo systemd-machine-id-setup
