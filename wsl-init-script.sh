@@ -168,16 +168,24 @@ install_binaries_from_gh() {
     mkdir -p $HOME/.local/bin
 
     # Tokei
+    print "Installing tokei..."
     wget -qO tokei.tar.gz https://github.com/XAMPPRocky/tokei/releases/latest/download/tokei-x86_64-unknown-linux-gnu.tar.gz
     tar -xzf tokei.tar.gz -C $HOME/.local/bin
     rm tokei.tar.gz
 
     # Task
+    print "Installing task..."
     wget -qO task.tar.gz https://github.com/go-task/task/releases/download/v3.21.0/task_linux_amd64.tar.gz
     tar -xzf task.tar.gz
     mv task $HOME/.local/bin
     cp completion/fish/task.fish $HOME/.config/fish/completions
     rm -rf task.tar.gz  LICENSE README.md completion
+
+    # Nvim
+    print "Installing nvim..."
+    wget -qO https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+    sudo dpkg -i nvim-linux64.deb
+    git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1
 
 setup_gesttings() {
     print "Setting up gsettings..."
