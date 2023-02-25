@@ -28,6 +28,7 @@ PACKAGES=(
     nautilus
     tilix
     papirus-icon-theme
+    dconf-editor
 )
 
 FISHER_PLUGINS=(
